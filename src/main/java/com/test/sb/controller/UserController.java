@@ -10,6 +10,8 @@ import com.test.sb.vo.User;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -33,6 +35,10 @@ public class UserController {
 
     @PutMapping("/users")
     public int updateUser(@RequestBody User user){
+        return 1;
+    }
+    @DeleteMapping("/users")
+    public int deleteUser(@PathVariable int num){
         return 1;
     }
 }
