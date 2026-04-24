@@ -28,7 +28,7 @@ public class UserController {
     }
     @GetMapping("/users")
     public User getUser(@PathVariable("num") int num){
-        return null;
+        return new User();
     }
 
     @PutMapping("/users")
