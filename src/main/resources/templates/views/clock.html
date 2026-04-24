@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        async function start(){
+            for(let i=3;i>0;i--){
+                const res = await fetch('/num/' + i);
+                document.querySelector('#rDiv').innerHTML += await res.json();
+            }
+        }
+    </script>
+    <div id="rDiv"></div>
+    <!--
+    3
+    2
+    1
+    -->
+    <button onclick="start()">시작</button>
+</body>
+</html>

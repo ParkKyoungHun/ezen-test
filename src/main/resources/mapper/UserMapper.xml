@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.sb.mapper.UserMapper">
+  <select id="selectUser" resultType="com.test.sb.vo.User">
+    select * from USER where num = #{num}
+  </select>
+  
+  <select id="selectUserList" resultType="com.test.sb.vo.User">
+    select * from USER
+  </select>
+
+  <insert id="insertUser">
+    INSERT USER_INFO(ID, PASSWORD, NAME, ETC)
+    VALUES(#{id},#{password},#{name},#{etc})
+  </insert>
+
+  <update id="updateUser">
+    UPDATE USER_INFO
+    SET PASSWORD=#{password}
+    ,NAME=#{name}
+    ,ETC=#{etc}
+    WHERE NUM=#{num}
+  </update>
+
+  <delete id="deleteUser">
+    DELETE FROM USER_INFO
+    WHERE NUM=#{num}
+  </delete>
+</mapper>

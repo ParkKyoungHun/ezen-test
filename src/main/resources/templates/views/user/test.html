@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getName(){
+            const name = document.querySelector('#name');
+
+            alert(name.value);
+        }
+    </script>
+    <input type="text" id="name" value="1번이름"><br>
+    <input type="text" id="name" value="2번이름"><br>
+    <button onclick="getName()">이름가져오기</button>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function join(){
+            const id = document.getElementById('id');
+            const password = document.getElementById('password');
+            const name = document.getElementById('name');
+            const param = {
+                id : id.value,
+                password : password.value,
+                name : name.value
+            }
+            const res = await fetch('/join',{
+                method:'POST',
+                headers:{'content-type':'application/json'},
+                body : JSON.stringify(param)
+            })
+            const data = await res.json();
+            if(data===1){
+                alert('회원가입이 성공하였습니다.로그인해주세요');
+                location.href='/views/user/login';
+            }
+        }
+    </script>
+    <table border="1">
+        <tr>
+            <th>아이디</th>
+            <td><input type="text" id="id"></td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td><input type="password" id="password"></td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <button onclick="join()">회원가입</button>
+            </th>
+        </tr>
+    </table>
+</body>
+</html>
