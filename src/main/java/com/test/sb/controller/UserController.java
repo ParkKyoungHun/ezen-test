@@ -12,6 +12,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 @RestController
@@ -27,5 +29,10 @@ public class UserController {
     @GetMapping("/users")
     public User getUser(@PathVariable("num") int num){
         return null;
+    }
+
+    @PutMapping("/users")
+    public int updateUser(@RequestBody User user){
+        return 1;
     }
 }
