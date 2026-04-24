@@ -24,4 +24,8 @@ public class UserController {
         int result = userService.createUser(user);
         return result;
     }
+    @GetMapping("/users")
+    public User getUser(@PathVariable("num") int num){
+        return null;
+    }
 }
