@@ -33,6 +33,7 @@ public class UserController {
 
     @PutMapping("/users")
     public int updateUser(@RequestBody User user){
+        log.info("user=>{}", user);
         return 1;
     }
 }
